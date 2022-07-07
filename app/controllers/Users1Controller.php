@@ -20,7 +20,10 @@ class Users1Controller extends SecureController{
 		$tablename = $this->tablename;
 		$fields = array("id", 
 			"usename", 
-			"email");
+			"email", 
+			"Text1", 
+			"Text2", 
+			"photo");
 		$pagination = $this->get_pagination(MAX_RECORD_COUNT); // get current pagination e.g array(page_number, page_limit)
 		//search table record
 		if(!empty($request->search)){
@@ -29,10 +32,13 @@ class Users1Controller extends SecureController{
 				users1.id LIKE ? OR 
 				users1.usename LIKE ? OR 
 				users1.password LIKE ? OR 
-				users1.email LIKE ?
+				users1.email LIKE ? OR 
+				users1.Text1 LIKE ? OR 
+				users1.Text2 LIKE ? OR 
+				users1.photo LIKE ?
 			)";
 			$search_params = array(
-				"%$text%","%$text%","%$text%","%$text%"
+				"%$text%","%$text%","%$text%","%$text%","%$text%","%$text%","%$text%"
 			);
 			//setting search conditions
 			$db->where($search_condition, $search_params);
@@ -85,7 +91,10 @@ class Users1Controller extends SecureController{
 		$tablename = $this->tablename;
 		$fields = array("id", 
 			"usename", 
-			"email");
+			"email", 
+			"Text1", 
+			"Text2", 
+			"photo");
 		if($value){
 			$db->where($rec_id, urldecode($value)); //select record based on field name
 		}
@@ -122,7 +131,7 @@ class Users1Controller extends SecureController{
 			$tablename = $this->tablename;
 			$request = $this->request;
 			//fillable fields
-			$fields = $this->fields = array("usename","password","email");
+			$fields = $this->fields = array("usename","password","email","Text1","Text2","photo");
 			$postdata = $this->format_request_data($formdata);
 			$cpassword = $postdata['confirm_password'];
 			$password = $postdata['password'];
@@ -133,10 +142,16 @@ class Users1Controller extends SecureController{
 				'usename' => 'required',
 				'password' => 'required',
 				'email' => 'required|valid_email',
+				'Text1' => 'required',
+				'Text2' => 'required',
+				'photo' => 'required',
 			);
 			$this->sanitize_array = array(
 				'usename' => 'sanitize_string',
 				'email' => 'sanitize_string',
+				'Text1' => 'sanitize_string',
+				'Text2' => 'sanitize_string',
+				'photo' => 'sanitize_string',
 			);
 			$this->filter_vals = true; //set whether to remove empty fields
 			$modeldata = $this->modeldata = $this->validate_form($postdata);
@@ -179,14 +194,20 @@ class Users1Controller extends SecureController{
 		$this->rec_id = $rec_id;
 		$tablename = $this->tablename;
 		 //editable fields
-		$fields = $this->fields = array("id","usename");
+		$fields = $this->fields = array("id","usename","Text1","Text2","photo");
 		if($formdata){
 			$postdata = $this->format_request_data($formdata);
 			$this->rules_array = array(
 				'usename' => 'required',
+				'Text1' => 'required',
+				'Text2' => 'required',
+				'photo' => 'required',
 			);
 			$this->sanitize_array = array(
 				'usename' => 'sanitize_string',
+				'Text1' => 'sanitize_string',
+				'Text2' => 'sanitize_string',
+				'photo' => 'sanitize_string',
 			);
 			$modeldata = $this->modeldata = $this->validate_form($postdata);
 			//Check if Duplicate Record Already Exit In The Database
@@ -237,7 +258,7 @@ class Users1Controller extends SecureController{
 		$this->rec_id = $rec_id;
 		$tablename = $this->tablename;
 		//editable fields
-		$fields = $this->fields = array("id","usename");
+		$fields = $this->fields = array("id","usename","Text1","Text2","photo");
 		$page_error = null;
 		if($formdata){
 			$postdata = array();
@@ -247,9 +268,15 @@ class Users1Controller extends SecureController{
 			$postdata = $this->format_request_data($postdata);
 			$this->rules_array = array(
 				'usename' => 'required',
+				'Text1' => 'required',
+				'Text2' => 'required',
+				'photo' => 'required',
 			);
 			$this->sanitize_array = array(
 				'usename' => 'sanitize_string',
+				'Text1' => 'sanitize_string',
+				'Text2' => 'sanitize_string',
+				'photo' => 'sanitize_string',
 			);
 			$this->filter_rules = true; //filter validation rules by excluding fields not in the formdata
 			$modeldata = $this->modeldata = $this->validate_form($postdata);

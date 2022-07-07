@@ -105,19 +105,59 @@ $redirect_to = $this->redirect_to;
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group ">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label class="control-label" for="Text1">Text1 <span class="text-danger">*</span></label>
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <div class="">
+                                                            <input id="ctrl-Text1"  value="<?php  echo $this->set_field_value('Text1',""); ?>" type="text" placeholder="Enter Text1"  required="" name="Text1"  class="form-control " />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group ">
+                                                    <div class="row">
+                                                        <div class="col-sm-4">
+                                                            <label class="control-label" for="Text2">Text2 <span class="text-danger">*</span></label>
+                                                        </div>
+                                                        <div class="col-sm-8">
+                                                            <div class="">
+                                                                <input id="ctrl-Text2"  value="<?php  echo $this->set_field_value('Text2',""); ?>" type="text" placeholder="Enter Text2"  required="" name="Text2"  class="form-control " />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group ">
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <label class="control-label" for="photo">Photo <span class="text-danger">*</span></label>
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <div class="">
+                                                                    <div class="dropzone required" input="#ctrl-photo" fieldname="photo"    data-multiple="false" dropmsg="Choose files or drag and drop files to upload"    btntext="Browse" extensions=".jpg,.png,.gif,.jpeg" filesize="3" maximum="1">
+                                                                        <input name="photo" id="ctrl-photo" required="" class="dropzone-input form-control" value="<?php  echo $this->set_field_value('photo',""); ?>" type="text"  />
+                                                                            <!--<div class="invalid-feedback animated bounceIn text-center">Please a choose file</div>-->
+                                                                            <div class="dz-file-limit animated bounceIn text-center text-danger"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--[main-form-end]-->
+                                                    <div class="form-group form-submit-btn-holder text-center mt-3">
+                                                        <button class="btn btn-primary" type="submit">
+                                                            Submit
+                                                            <i class="icon-paper-plane"></i>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <!--[main-form-end]-->
-                                        <div class="form-group form-submit-btn-holder text-center mt-3">
-                                            <button class="btn btn-primary" type="submit">
-                                                Submit
-                                                <i class="icon-paper-plane"></i>
-                                            </button>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
+                        </section>
+                        

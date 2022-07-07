@@ -71,6 +71,60 @@ $show_export_btn = $this->show_export_btn;
                                         <th class="title"> Email: </th>
                                         <td class="value"> <?php echo $data['email']; ?></td>
                                     </tr>
+                                    <tr  class="td-Text1">
+                                        <th class="title"> Text1: </th>
+                                        <td class="value">
+                                            <span  data-value="<?php echo $data['Text1']; ?>" 
+                                                data-pk="<?php echo $data['id'] ?>" 
+                                                data-url="<?php print_link("users1/editfield/" . urlencode($data['id'])); ?>" 
+                                                data-name="Text1" 
+                                                data-title="Enter Text1" 
+                                                data-placement="left" 
+                                                data-toggle="click" 
+                                                data-type="text" 
+                                                data-mode="popover" 
+                                                data-showbuttons="left" 
+                                                class="is-editable" >
+                                                <?php echo $data['Text1']; ?> 
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr  class="td-Text2">
+                                        <th class="title"> Text2: </th>
+                                        <td class="value">
+                                            <span  data-value="<?php echo $data['Text2']; ?>" 
+                                                data-pk="<?php echo $data['id'] ?>" 
+                                                data-url="<?php print_link("users1/editfield/" . urlencode($data['id'])); ?>" 
+                                                data-name="Text2" 
+                                                data-title="Enter Text2" 
+                                                data-placement="left" 
+                                                data-toggle="click" 
+                                                data-type="text" 
+                                                data-mode="popover" 
+                                                data-showbuttons="left" 
+                                                class="is-editable" >
+                                                <?php echo $data['Text2']; ?> 
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr  class="td-photo">
+                                        <th class="title"> Photo: </th>
+                                        <td class="value">
+                                            <span  data-value="<?php echo $data['photo']; ?>" 
+                                                data-pk="<?php echo $data['id'] ?>" 
+                                                data-url="<?php print_link("users1/editfield/" . urlencode($data['id'])); ?>" 
+                                                data-name="photo" 
+                                                data-title="Browse..." 
+                                                data-placement="left" 
+                                                data-toggle="click" 
+                                                data-type="text" 
+                                                data-mode="popover" 
+                                                data-showbuttons="left" 
+                                                class="is-editable" >
+                                                <?php echo $data['photo']; ?> 
+                                            </span>
+                                        </td>
+                                    </tr>
                                 </tbody>
                                 <!-- Table Body End -->
                             </table>

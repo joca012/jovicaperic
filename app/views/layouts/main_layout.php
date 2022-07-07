@@ -29,6 +29,7 @@
 		?>
 		<?php
 			Html ::  page_css('bootstrap-editable.css');
+			Html ::  page_css('dropzone.min.css');
 			Html ::  page_js('jquery-3.3.1.min.js');
 		?>
 	</head>
@@ -131,6 +132,7 @@
 		?>
 		<?php
 			Html ::  page_js('bootstrap-editable.js');
+			Html ::  page_js('dropzone.min.js');
 			Html ::  page_js('plugins.js'); //boostrapswitch, passwordStrength, twbs-pagination, blueimp-gallery,
 			Html ::  page_js('plugins-init.js');
 			Html ::  page_js('page-scripts.js');

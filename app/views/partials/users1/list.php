@@ -117,6 +117,9 @@ $show_pagination = $this->show_pagination;
                                                 <th  class="td-id"> Id</th>
                                                 <th  class="td-usename"> Usename</th>
                                                 <th  class="td-email"> Email</th>
+                                                <th  class="td-Text1"> Text1</th>
+                                                <th  class="td-Text2"> Text2</th>
+                                                <th  class="td-photo"> Photo</th>
                                                 <th class="td-btn"></th>
                                             </tr>
                                         </thead>
@@ -156,6 +159,51 @@ $show_pagination = $this->show_pagination;
                                                         </span>
                                                     </td>
                                                     <td class="td-email"><a href="<?php print_link("mailto:$data[email]") ?>"><?php echo $data['email']; ?></a></td>
+                                                    <td class="td-Text1">
+                                                        <span  data-value="<?php echo $data['Text1']; ?>" 
+                                                            data-pk="<?php echo $data['id'] ?>" 
+                                                            data-url="<?php print_link("users1/editfield/" . urlencode($data['id'])); ?>" 
+                                                            data-name="Text1" 
+                                                            data-title="Enter Text1" 
+                                                            data-placement="left" 
+                                                            data-toggle="click" 
+                                                            data-type="text" 
+                                                            data-mode="popover" 
+                                                            data-showbuttons="left" 
+                                                            class="is-editable" >
+                                                            <?php echo $data['Text1']; ?> 
+                                                        </span>
+                                                    </td>
+                                                    <td class="td-Text2">
+                                                        <span  data-value="<?php echo $data['Text2']; ?>" 
+                                                            data-pk="<?php echo $data['id'] ?>" 
+                                                            data-url="<?php print_link("users1/editfield/" . urlencode($data['id'])); ?>" 
+                                                            data-name="Text2" 
+                                                            data-title="Enter Text2" 
+                                                            data-placement="left" 
+                                                            data-toggle="click" 
+                                                            data-type="text" 
+                                                            data-mode="popover" 
+                                                            data-showbuttons="left" 
+                                                            class="is-editable" >
+                                                            <?php echo $data['Text2']; ?> 
+                                                        </span>
+                                                    </td>
+                                                    <td class="td-photo">
+                                                        <span  data-value="<?php echo $data['photo']; ?>" 
+                                                            data-pk="<?php echo $data['id'] ?>" 
+                                                            data-url="<?php print_link("users1/editfield/" . urlencode($data['id'])); ?>" 
+                                                            data-name="photo" 
+                                                            data-title="Browse..." 
+                                                            data-placement="left" 
+                                                            data-toggle="click" 
+                                                            data-type="text" 
+                                                            data-mode="popover" 
+                                                            data-showbuttons="left" 
+                                                            class="is-editable" >
+                                                            <?php echo $data['photo']; ?> 
+                                                        </span>
+                                                    </td>
                                                     <th class="td-btn">
                                                         <a class="btn btn-sm btn-success has-tooltip" title="View Record" href="<?php print_link("users1/view/$rec_id"); ?>">
                                                             <i class="icon-eye"></i> View
